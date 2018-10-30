@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="HomeSubMenuMovies">
+		<control type="image" id="90161">
+			<width>35</width>
+			<height>35</height>
+			<texture border="0,0,0,3" flipx="true">HomeSubEnd.png</texture>
+		</control>
+		<control type="button" id="90162">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>New</label>
+                        <onclick>ActivateWindow(Videos,special://profile/playlists/video/fnew.xsp, return)</onclick>
+		</control>
+		<control type="button" id="90163">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Collection</label>
+                        <onclick>ActivateWindow(Videos,special://profile/playlists/video/fcollection.xsp, return)</onclick>
+		</control>
+		<control type="button" id="90164">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Børn</label>
+                        <onclick>ActivateWindow(Videos,special://profile/playlists/video/fborn.xsp, return)</onclick>
+		</control>
+		<control type="image" id="90165">
+			<width>35</width>
+			<height>35</height>
+			<texture border="0,0,0,3">HomeSubEnd.png</texture>
+		</control>
+	</include>
+
+	<include name="HomeSubMenuTVShows">
+		<control type="image" id="90171">
+			<width>35</width>
+			<height>35</height>
+			<texture border="0,0,0,3" flipx="true">HomeSubEnd.png</texture>
+		</control>
+		<control type="button" id="90172">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Collection</label>
+                        <onclick>ActivateWindow(Videos,special://profile/playlists/video/scollection.xsp, return)</onclick>
+		</control>
+		<control type="button" id="90173">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Børn</label>
+                        <onclick>ActivateWindow(Videos,special://profile/playlists/video/sborn.xsp, return)</onclick>
+		</control>
+		<control type="image" id="90174">
+			<width>35</width>
+			<height>35</height>
+			<texture border="0,0,0,3">HomeSubEnd.png</texture>
+		</control>
+	</include>
+
+	<include name="HomeSubMenuTV">
+		<control type="image" id="90141">
+			<width>35</width>
+			<height>35</height>
+			<texture border="0,0,0,3" flipx="true">HomeSubEnd.png</texture>
+		</control>
+		<control type="button" id="90142">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>19019</label>
+			<onclick>ActivateWindow(TVChannels)</onclick>
+		</control>
+		<control type="button" id="90143">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>22020</label>
+			<onclick>ActivateWindow(TVGuide)</onclick>
+		</control>
+		<control type="button" id="90144">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>19163</label>
+			<onclick>ActivateWindow(TVRecordings)</onclick>
+		</control>
+		<control type="button" id="90145">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Kodi Recordings</label>
+                        <onclick>ActivateWindow(Videos, nfs://192.168.1.8/mnt/6tb_hdd/recordings/, return)</onclick>
+		</control>
+		<control type="button" id="90146">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>19138</label>
+			<onclick>ActivateWindow(TVTimerRules)</onclick>
+		</control>
+		<control type="button" id="90147">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>19040</label>
+			<onclick>ActivateWindow(TVTimers)</onclick>
+		</control>
+		<control type="image" id="90148">
+			<width>35</width>
+			<height>35</height>
+			<texture border="0,0,0,3">HomeSubEnd.png</texture>
+		</control>
+	</include>
+
+	<include name="HomeSubMenuMisc">
+		<control type="image" id="90151">
+			<width>35</width>
+			<height>35</height>
+			<texture border="0,0,0,3" flipx="true">HomeSubEnd.png</texture>
+		</control>
+		<control type="button" id="90152">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Home Video</label>
+<!--                        <onclick>ActivateWindow(Videos,special://profile/playlists/video/hvideo.xsp, return)</onclick>   -->
+                        <onclick>ActivateWindow(Videos, nfs://192.168.1.8/mnt/6tb_hdd/multiMedia/home_video/, return)</onclick>
+		</control>
+		<control type="button" id="90153">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Photos</label>
+                        <onclick>ActivateWindow(Pictures, nfs://192.168.1.8/mnt/6tb_hdd/multiMedia/photos/, return)</onclick>
+		</control>
+		<control type="button" id="90154">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Bonanza</label>
+                        <onclick>RunAddon(plugin.video.dr.dk.bonanza)</onclick>
+		</control>
+		<control type="image" id="90155">
+			<width>35</width>
+			<height>35</height>
+			<texture border="0,0,0,3">HomeSubEnd.png</texture>
+		</control>
+	</include>
+</includes>

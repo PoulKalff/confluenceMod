@@ -1,0 +1,24 @@
+<advancedsettings>
+  <cache>
+    <memorysize>104857600</memorysize>
+    <buffermode>1</buffermode>
+    <readfactor>1.5</readfactor>
+  </cache>
+  <video>
+    <timeseekforward>30</timeseekforward>
+    <timeseekbackward>-10</timeseekbackward>
+    <timeseekforwardbig>600</timeseekforwardbig>
+    <timeseekbackwardbig>-300</timeseekbackwardbig>
+  </video>
+  <videodatabase>
+    <type>mysql</type>
+    <host>192.168.1.8</host>
+    <port>3306</port>
+    <user>xbmc</user>
+    <pass>xbmc</pass>
+  </videodatabase>
+  <videolibrary>
+    <importwatchedstate>true</importwatchedstate>
+    <importresumepoint>true</importresumepoint>
+  </videolibrary>
+</advancedsettings>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="tvshows">
+    <name>Children's TV-Series</name>
+    <match>all</match>
+    <rule field="path" operator="contains">
+        <value>series/children</value>
+    </rule>
+    <order direction="ascending">sorttitle</order>
+</smartplaylist>
