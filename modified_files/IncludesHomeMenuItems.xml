@@ -74,7 +74,7 @@
 		</control>
 		<control type="button" id="90145">
 			<include>ButtonHomeSubCommonValues</include>
-			<label>Kodi Recordings</label>
+			<label>Recorded Files</label>
                         <onclick>ActivateWindow(Videos, nfs://192.168.1.8/mnt/6tb_hdd/recordings/, return)</onclick>
 		</control>
 		<control type="button" id="90146">
