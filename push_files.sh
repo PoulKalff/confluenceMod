@@ -14,6 +14,8 @@ else
         sudo cp /home/$1/ConfluenceMod/modified_files/*.png                            /home/$1/.kodi/addons/skin.confluence/media/
         sudo cp /home/$1/ConfluenceMod/modified_files/Home.xml                         /home/$1/.kodi/addons/skin.confluence/720p/
         sudo cp /home/$1/ConfluenceMod/modified_files/IncludesHomeMenuItems.xml        /home/$1/.kodi/addons/skin.confluence/720p/
+        sudo cp /home/$1/ConfluenceMod/modified_files/IncludesBackgroundBuilding.xml   /home/$1/.kodi/addons/skin.confluence/720p/
+        sudo cp /home/$1/ConfluenceMod/modified_files/Includes.xml                     /home/$1/.kodi/addons/skin.confluence/720p/
         sudo cp /home/$1/ConfluenceMod/modified_files/VideoFullScreen.xml              /home/$1/.kodi/addons/skin.confluence/720p/
         sudo cp /home/$1/ConfluenceMod/modified_files/DialogSeekBar.xml                /home/$1/.kodi/addons/skin.confluence/720p/
         if [ -d "/home/$1/.kodi/addons/plugin.video.dr.dk.bonanza" ]
