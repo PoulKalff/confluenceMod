@@ -948,7 +948,6 @@
 				<top>3</top>										<!-- Changed -->
 				<width>35</width>									<!-- Changed -->
 				<height>35</height>									<!-- Changed -->
-				<label>31003</label>
 				<font>-</font>
 				<onclick>ActivateWindow(ShutdownMenu, return)</onclick>
 				<texturefocus border="5">floor_buttonFO.png</texturefocus>
@@ -974,7 +973,6 @@
 				<top>3</top>										<!-- Changed -->
 				<width>35</width>									<!-- Changed -->
 				<height>35</height>									<!-- Changed -->
-				<label>31003</label>
 				<font>-</font>
 				<onclick>ActivateWindow(Videos, return)</onclick>
 				<texturefocus border="5">floor_buttonFO.png</texturefocus>
@@ -1000,7 +998,6 @@
 				<top>3</top>
 				<width>35</width>
 				<height>35</height>
-				<label>31003</label>
 				<font>-</font>
 				<aligny>-</aligny>
 	                        <onclick>RunAddon(service.osmc.settings, return)</onclick>
@@ -1027,7 +1024,6 @@
 				<top>3</top>
 				<width>35</width>
 				<height>35</height>
-				<label>31003</label>
 				<font>-</font>
 				<aligny>-</aligny>
 				<onclick>ActivateWindow(Settings)</onclick>
@@ -1054,7 +1050,6 @@
 				<top>3</top>
 				<width>35</width>
 				<height>35</height>
-				<label>31003</label>
 				<font>-</font>
 				<aligny>-</aligny>
 				<onclick>ActivateWindow(SystemInfo)</onclick>
