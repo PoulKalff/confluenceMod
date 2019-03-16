@@ -113,10 +113,15 @@
 		</control>
 		<control type="button" id="90154">
 			<include>ButtonHomeSubCommonValues</include>
+			<label>Games</label>
+                        <onclick>ActivateWindow(Games, return)</onclick>
+		</control>
+		<control type="button" id="90155">
+			<include>ButtonHomeSubCommonValues</include>
 			<label>Bonanza</label>
                         <onclick>RunAddon(plugin.video.dr.dk.bonanza)</onclick>
 		</control>
-		<control type="image" id="90155">
+		<control type="image" id="90156">
 			<width>35</width>
 			<height>35</height>
 			<texture border="0,0,0,3">HomeSubEnd.png</texture>
