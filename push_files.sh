@@ -20,9 +20,10 @@ else
         sudo cp /home/$1/confluenceMod/modified_files/DialogSeekBar.xml                /home/$1/.kodi/addons/skin.confluence/720p/
         if [ -d "/home/$1/.kodi/addons/plugin.video.dr.dk.bonanza" ]
         then
-                sudo cp /home/$1/ConfluenceMod/modified_files/addon.py                 /home/$1/.kodi/addons/plugin.video.dr.dk.bonanza/
+                sudo cp /home/$1/confluenceMod/modified_files/addon.py                 /home/$1/.kodi/addons/plugin.video.dr.dk.bonanza/
+                 echo '  "plugin.video.dr.dk.bonanza" was modified'
         else
-                echo '   ("plugin.video.dr.dk.bonanza" does not exist, and was ignored!)'
+                echo '  ("plugin.video.dr.dk.bonanza" does not exist, and was ignored!)'
         fi
         echo '  Done!'
         echo
