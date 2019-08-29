@@ -6,11 +6,13 @@
 			<height>35</height>
 			<texture border="0,0,0,3" flipx="true">HomeSubEnd.png</texture>
 		</control>
+<!--
 		<control type="button" id="90162">
 			<include>ButtonHomeSubCommonValues</include>
 			<label>New</label>
                         <onclick>ActivateWindow(Videos,special://profile/playlists/video/fnew.xsp, return)</onclick>
 		</control>
+-->
 		<control type="button" id="90163">
 			<include>ButtonHomeSubCommonValues</include>
 			<label>Collection</label>
@@ -103,7 +105,7 @@
 		<control type="button" id="90152">
 			<include>ButtonHomeSubCommonValues</include>
 			<label>Home Video</label>
-<!--                        <onclick>ActivateWindow(Videos,special://profile/playlists/video/hvideo.xsp, return)</onclick>   -->
+<!--                    <onclick>ActivateWindow(Videos,special://profile/playlists/video/hvideo.xsp, return)</onclick>   -->
                         <onclick>ActivateWindow(Videos, nfs://192.168.1.8/mnt/6tb_hdd/multiMedia/home_video/, return)</onclick>
 		</control>
 		<control type="button" id="90153">
