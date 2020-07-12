@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<smartplaylist type="movies">
-    <name>New Movies</name>
-    <match>all</match>
-    <rule field="path" operator="contains">
-        <value>movies/new</value>
-    </rule>
-    <order direction="ascending">sorttitle</order>
-</smartplaylist>

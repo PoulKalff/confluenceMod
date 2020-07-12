@@ -15,11 +15,6 @@
             <allowsharing>true</allowsharing>
         </source>
         <source>
-            <name>film_ny</name>
-            <path pathversion="1">nfs://192.168.1.8/mnt/6tb_hdd/multiMedia/movies/new/</path>
-            <allowsharing>true</allowsharing>
-        </source>
-        <source>
             <name>serier_born</name>
             <path pathversion="1">nfs://192.168.1.8/mnt/6tb_hdd/multiMedia/series/children/</path>
             <allowsharing>true</allowsharing>
