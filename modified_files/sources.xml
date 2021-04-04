@@ -6,7 +6,7 @@
         <default pathversion="1"></default>
         <source>
             <name>film_born</name>
-            <path pathversion="1">nfs://192.168.1.8/mnt/6tb_hdd/multiMedia/movies/children/</path>
+            <path pathversion="1">nfs://192.168.1.8/mnt/3tb_hdd/multiMedia/movies/children/</path>
             <allowsharing>true</allowsharing>
         </source>
         <source>
@@ -16,7 +16,7 @@
         </source>
         <source>
             <name>serier_born</name>
-            <path pathversion="1">nfs://192.168.1.8/mnt/6tb_hdd/multiMedia/series/children/</path>
+            <path pathversion="1">nfs://192.168.1.8/mnt/3tb_hdd/multiMedia/series/children/</path>
             <allowsharing>true</allowsharing>
         </source>
         <source>
@@ -26,7 +26,7 @@
         </source>
         <source>
             <name>hjemmevideo</name>
-            <path pathversion="1">nfs://192.168.1.8/mnt/6tb_hdd/multiMedia/miscellaneous/home_video/</path>
+            <path pathversion="1">nfs://192.168.1.8/mnt/3tb_hdd/multiMedia/miscellaneous/home_video/</path>
             <allowsharing>true</allowsharing>
         </source>
     </video>
