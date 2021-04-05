@@ -10,5 +10,8 @@ Setup from scratch:
 Sources.xml:
 -------------------------
  - Denne fil indeholder kilderne til kodi's videoer, og bør kun eksistere på een host. Den skal kun læses i tilfælde af at databasen går tabt (tror jeg?). Filen ligger i backup, men skal altså ikke bruges ved klient-opsætning, kun ved server/DB-opsætning
- - Når mySQl skal bygges op forfra, kan filen sources.xml kopieres til ~/.kodi/userdata, MEN den vil ikke kunne bruges af kodi, før man i interfacet vælger SET CONTENT og derefter SCAN CONTENT. De 5 Sources vil nu blive læst inf og lagt i mySQL, såfremt denne er opsat
+ - Når mySQl skal bygges op forfra, kan filen sources.xml kopieres til ~/.kodi/userdata, 
+	MEN den vil ikke kunne bruges af kodi, før man i interfacet vælger SET CONTENT og derefter SCAN CONTENT. De 5 Sources vil nu blive læst ind og lagt i mySQL, såfremt denne er opsat
+	Jeg kopierede filen ind (eller ændrede i den eksisterende, og derefter gik ind i kodi under SETTINGS -> MEDIA -> LIBRARY -> VIDEOS, valgte
+	hver af de kilder som var ændret, højreklikkede denne og valgte i ny menu CHANGE CONTENT, valgte type og derefter Rescan )
  - Opsæt mySQl som beskrevet i den officielle dokumentation. Min kodi ville ikke læse/skrive til DB pga. at brugeren 'xbmc' ikke havde readpermission, jeg løste dette ved at give persmission på 'xbmc', på samme måde som den officielle beskreivlese foreskriver at man giver det til 'kodi'
