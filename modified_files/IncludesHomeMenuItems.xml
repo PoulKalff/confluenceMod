@@ -6,13 +6,6 @@
 			<height>35</height>
 			<texture border="0,0,0,3" flipx="true">HomeSubEnd.png</texture>
 		</control>
-<!--
-		<control type="button" id="90162">
-			<include>ButtonHomeSubCommonValues</include>
-			<label>New</label>
-                        <onclick>ActivateWindow(Videos,special://profile/playlists/video/fnew.xsp, return)</onclick>
-		</control>
--->
 		<control type="button" id="90163">
 			<include>ButtonHomeSubCommonValues</include>
 			<label>Collection</label>
@@ -105,23 +98,22 @@
 		<control type="button" id="90152">
 			<include>ButtonHomeSubCommonValues</include>
 			<label>Home Video</label>
-<!--                    <onclick>ActivateWindow(Videos,special://profile/playlists/video/hvideo.xsp, return)</onclick>   -->
-                        <onclick>ActivateWindow(Videos, nfs://192.168.1.8/mnt/6tb_hdd/multiMedia/home_video/, return)</onclick>
+                        <onclick>ActivateWindow(Videos, nfs://192.168.1.8/mnt/8tb_hdd/multiMedia/home_video/, return)</onclick>
+		</control>
+		<control type="button" id="90152">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Documentaries</label>
+                        <onclick>ActivateWindow(Videos, nfs://192.168.1.8/mnt/8tb_hdd/multiMedia/documentary/, return)</onclick>
 		</control>
 		<control type="button" id="90153">
 			<include>ButtonHomeSubCommonValues</include>
 			<label>Photos</label>
-                        <onclick>ActivateWindow(Pictures, nfs://192.168.1.8/mnt/6tb_hdd/multiMedia/photos/, return)</onclick>
+                        <onclick>ActivateWindow(Pictures, nfs://192.168.1.8/mnt/8tb_hdd/multiMedia/photos/, return)</onclick>
 		</control>
 		<control type="button" id="90154">
 			<include>ButtonHomeSubCommonValues</include>
 			<label>Games</label>
                         <onclick>ActivateWindow(Games, return)</onclick>
-		</control>
-		<control type="button" id="90155">
-			<include>ButtonHomeSubCommonValues</include>
-			<label>Bonanza</label>
-                        <onclick>RunAddon(plugin.video.dr.dk.bonanza)</onclick>
 		</control>
 		<control type="image" id="90156">
 			<width>35</width>
