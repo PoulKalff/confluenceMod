@@ -18,6 +18,13 @@ else
         sudo cp /home/$1/confluenceMod/modified_files/Includes.xml                     /home/$1/.kodi/addons/skin.confluence/720p/
         sudo cp /home/$1/confluenceMod/modified_files/VideoFullScreen.xml              /home/$1/.kodi/addons/skin.confluence/720p/
         sudo cp /home/$1/confluenceMod/modified_files/DialogSeekBar.xml                /home/$1/.kodi/addons/skin.confluence/720p/
+        if [ -d "/home/$1/.kodi/addons/plugin.video.drnu" ]
+        then
+                sudo cp modified_files/addon.py                 /home/$1/.kodi/addons/plugin.video.drnu/	# NB: Nothing is currently changed/customized in adddon.py!
+                echo '   ("plugin.video.drnu" was updated)'
+        else
+                echo '   ("plugin.video.drnu" does not exist, and was ignored!)'
+        fi
         echo '     Done!'
         echo
 fi

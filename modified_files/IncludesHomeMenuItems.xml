@@ -110,12 +110,17 @@
 			<label>Photos</label>
                         <onclick>ActivateWindow(Pictures, nfs://192.168.1.8/mnt/8tb_hdd/multiMedia/photos/, return)</onclick>
 		</control>
-		<control type="button" id="90155">
+                <control type="button" id="90155">
+                        <include>ButtonHomeSubCommonValues</include>
+                        <label>DRTV</label>
+                        <onclick>RunAddon(plugin.video.drnu)</onclick>
+                </control>
+		<control type="button" id="90156">
 			<include>ButtonHomeSubCommonValues</include>
 			<label>Games</label>
                         <onclick>ActivateWindow(Games, return)</onclick>
 		</control>
-		<control type="image" id="90156">
+		<control type="image" id="90157">
 			<width>35</width>
 			<height>35</height>
 			<texture border="0,0,0,3">HomeSubEnd.png</texture>
