@@ -141,10 +141,10 @@ class DrDkTvAddon(object):
     def showMainMenu(self):
         items = list()
         # Live TV
-        item = xbmcgui.ListItem(tr(30027), offscreen=True)
-        item.setArt({'fanart': self.fanart_image, 'icon': os.path.join(addon_path, 'resources', 'icons', 'livetv.png')})
-        item.addContextMenuItems(self.menuItems, False)
-        items.append((self._plugin_url + '?show=liveTV', item, True))
+#        item = xbmcgui.ListItem(tr(30027), offscreen=True)
+ #       item.setArt({'fanart': self.fanart_image, 'icon': os.path.join(addon_path, 'resources', 'icons', 'livetv.png')})
+  #      item.addContextMenuItems(self.menuItems, False)
+   #     items.append((self._plugin_url + '?show=liveTV', item, True))
 
         # A-Z Program Series
         item = xbmcgui.ListItem(tr(30000), offscreen=True)
@@ -153,34 +153,34 @@ class DrDkTvAddon(object):
         items.append((self._plugin_url + '?show=listAZ', item, True))
 
         # Latest
-        item = xbmcgui.ListItem(tr(30001), offscreen=True)
-        item.setArt({'fanart': self.fanart_image, 'icon': os.path.join(addon_path, 'resources', 'icons', 'all.png')})
-        item.addContextMenuItems(self.menuItems, False)
-        items.append((self._plugin_url + '?show=latest', item, True))
+#        item = xbmcgui.ListItem(tr(30001), offscreen=True)
+ #       item.setArt({'fanart': self.fanart_image, 'icon': os.path.join(addon_path, 'resources', 'icons', 'all.png')})
+  #      item.addContextMenuItems(self.menuItems, False)
+   #     items.append((self._plugin_url + '?show=latest', item, True))
 
         # Premiere
-        item = xbmcgui.ListItem(tr(30025), offscreen=True)
-        item.setArt({'fanart': self.fanart_image, 'icon': os.path.join(addon_path, 'resources', 'icons', 'new.png')})
-        item.addContextMenuItems(self.menuItems, False)
-        items.append(('{}?listVideos={}'.format(self._plugin_url, tvapi.SLUG_PREMIERES), item, True))
+#        item = xbmcgui.ListItem(tr(30025), offscreen=True)
+ #       item.setArt({'fanart': self.fanart_image, 'icon': os.path.join(addon_path, 'resources', 'icons', 'new.png')})
+  #      item.addContextMenuItems(self.menuItems, False)
+   #     items.append(('{}?listVideos={}'.format(self._plugin_url, tvapi.SLUG_PREMIERES), item, True))
 
         # Themes
-        item = xbmcgui.ListItem(tr(30028), offscreen=True)
-        item.setArt({'fanart': self.fanart_image, 'icon': os.path.join(addon_path, 'resources', 'icons', 'all.png')})
-        item.addContextMenuItems(self.menuItems, False)
-        items.append((self._plugin_url + '?show=themes', item, True))
+#        item = xbmcgui.ListItem(tr(30028), offscreen=True)
+ #       item.setArt({'fanart': self.fanart_image, 'icon': os.path.join(addon_path, 'resources', 'icons', 'all.png')})
+  #      item.addContextMenuItems(self.menuItems, False)
+   #     items.append((self._plugin_url + '?show=themes', item, True))
 
         # Most viewed
-        item = xbmcgui.ListItem(tr(30011), offscreen=True)
-        item.setArt({'fanart': self.fanart_image, 'icon': os.path.join(addon_path, 'resources', 'icons', 'eye.png')})
-        item.addContextMenuItems(self.menuItems, False)
-        items.append((self._plugin_url + '?show=mostViewed', item, True))
+#        item = xbmcgui.ListItem(tr(30011), offscreen=True)
+ #       item.setArt({'fanart': self.fanart_image, 'icon': os.path.join(addon_path, 'resources', 'icons', 'eye.png')})
+  #      item.addContextMenuItems(self.menuItems, False)
+   #     items.append((self._plugin_url + '?show=mostViewed', item, True))
 
         # Spotlight
-        item = xbmcgui.ListItem(tr(30002), offscreen=True)
-        item.setArt({'fanart': self.fanart_image, 'icon': os.path.join(addon_path, 'resources', 'icons', 'star.png')})
-        item.addContextMenuItems(self.menuItems, False)
-        items.append((self._plugin_url + '?show=highlights', item, True))
+#        item = xbmcgui.ListItem(tr(30002), offscreen=True)
+ #       item.setArt({'fanart': self.fanart_image, 'icon': os.path.join(addon_path, 'resources', 'icons', 'star.png')})
+  #      item.addContextMenuItems(self.menuItems, False)
+   #     items.append((self._plugin_url + '?show=highlights', item, True))
 
         # Search videos
         item = xbmcgui.ListItem(tr(30003), offscreen=True)
@@ -189,10 +189,10 @@ class DrDkTvAddon(object):
         items.append((self._plugin_url + '?show=search', item, True))
 
         # Recently watched Program Series
-        item = xbmcgui.ListItem(tr(30007), offscreen=True)
-        item.setArt({'fanart': self.fanart_image, 'icon': os.path.join(addon_path, 'resources', 'icons', 'eye-star.png')})
-        item.addContextMenuItems(self.menuItems, False)
-        items.append((self._plugin_url + '?show=recentlyWatched', item, True))
+#        item = xbmcgui.ListItem(tr(30007), offscreen=True)
+ #       item.setArt({'fanart': self.fanart_image, 'icon': os.path.join(addon_path, 'resources', 'icons', 'eye-star.png')})
+  #      item.addContextMenuItems(self.menuItems, False)
+   #     items.append((self._plugin_url + '?show=recentlyWatched', item, True))
 
         # Favorite Program Series
         item = xbmcgui.ListItem(tr(30008), offscreen=True)
