@@ -98,7 +98,7 @@
 		<control type="button" id="90152">
 			<include>ButtonHomeSubCommonValues</include>
                         <label>DRTV</label>
-                        <onclick>RunAddon(plugin.video.drnu)</onclick>
+                        <onclick>RunAddon(plugin.video.drnu, return)</onclick>
 		</control>
 		<control type="button" id="90153">
 			<include>ButtonHomeSubCommonValues</include>
