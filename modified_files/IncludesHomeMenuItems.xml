@@ -97,8 +97,8 @@
 		</control>
 		<control type="button" id="90152">
 			<include>ButtonHomeSubCommonValues</include>
-			<label>Home Video</label>
-                        <onclick>ActivateWindow(Videos, nfs://192.168.1.8/mnt/8tb_hdd/multiMedia/home_video/, return)</onclick>
+                        <label>DRTV</label>
+                        <onclick>RunAddon(plugin.video.drnu)</onclick>
 		</control>
 		<control type="button" id="90153">
 			<include>ButtonHomeSubCommonValues</include>
@@ -112,8 +112,8 @@
 		</control>
                 <control type="button" id="90155">
                         <include>ButtonHomeSubCommonValues</include>
-                        <label>DRTV</label>
-                        <onclick>RunAddon(plugin.video.drnu)</onclick>
+			<label>Home Video</label>
+                        <onclick>ActivateWindow(Videos, nfs://192.168.1.8/mnt/8tb_hdd/multiMedia/home_video/, return)</onclick>
                 </control>
 		<control type="button" id="90156">
 			<include>ButtonHomeSubCommonValues</include>
