@@ -49,7 +49,7 @@ SLUG_PREMIERES='forpremierer'
 SLUG_ADULT=['dr1','dr2','dr3','dr-k']
 
 class Api(object):
-    API_URL = 'http://www.dr.dk/mu-online/api/1.2'
+    API_URL = 'http://www.dr.dk/mu-online/api/1.4'
 
     def __init__(self, cachePath):
         self.cachePath = cachePath
@@ -64,30 +64,6 @@ class Api(object):
         dbDate = self.cursor.execute("SELECT * FROM lastUpdate").fetchall()[0][0]
         self.dbCurrent = True if dbDate == datetime.date.today().strftime("%Y-%m-%d") else False
 
-
-    def getLiveTV(self):
-        channels = self._http_request('/channel/all-active-dr-tv-channels')
-        return [channel for channel in channels if channel['Title'] in ['DR1', 'DR2', 'DR Ramasjang']]
-
-    def getChildrenFrontItems(self, channel):
-        childrenFront = self._http_request('/page/tv/children/front/{}'.format(channel))
-        return self._handle_paging(childrenFront['Programs'])
-
-    def getThemes(self):
-        themes = self._http_request('/page/tv/themes', {'themenamesonly': 'false'})
-        return themes['Themes']
-
-    def getLatestPrograms(self):
-        channel = ''
-        if ADDON.getSetting('disable.kids') == 'true':
-            channel = ','.join(SLUG_ADULT)
-        result = self._http_request('/page/tv/programs', {
-            'index': '*',
-            'orderBy': 'LastPrimaryBroadcastWithPublicAsset',
-            'orderDescending': 'true',
-            'channel': channel
-        }, cache=False)
-        return result['Programs']['Items']
 
     def getProgramIndexes(self):
         """ If DB is from today, use it, if not, use web  """
@@ -112,7 +88,6 @@ class Api(object):
     def getSeries(self, query):
         """ If DB is from today, use it, if not, use web  """
         if self.dbCurrent:
-            result = []
             sql = "SELECT Title, PrimaryImageUri, SeriesSlug, Uri FROM programs WHERE indexLetter == '{}'".format(query.upper())
             reply = self.cursor.execute(sql).fetchall()
             result = {'Title': 'Placeholder', 'Items': [], 'Paging': {'Source': 'none'}, 'TotalSize': 0}
@@ -124,19 +99,28 @@ class Api(object):
         return self._handle_paging(result)
 
 
-
-    def searchSeries(self, query):
-        # Remove various characters that makes the API puke
-        cleaned_query = re.sub('[&()"\'\.!]', '', query)
-        result = self._http_request('/search/tv/programcards-latest-episode-with-asset/series-title/{}'.format(cleaned_query))
-        return self._handle_paging(result)
-
     def getEpisodes(self, slug):
-        result = self._http_request('/list/{}'.format(slug), {'limit': 48, 'expanded': True})
+        """ If DB is from today, use it, if not, use web  """
+        if self.dbCurrent:
+            sql = "SELECT * FROM episodes WHERE SeriesSlug == '{}'".format(slug)
+            reply = self.cursor.execute(sql).fetchall()
+            result = {'Title': 'Placeholder', 'Items': [], 'Paging': {'Source': 'none'}, 'TotalSize': 0}
+            for r in reply:
+                item = {'PrimaryBroadcastStartTime' : r[3] , 'SeriesSlug': r[5], 'PrimaryAsset': {'Uri': r[4]}, 'Slug': r[2], 'PrimaryImageUri': r[1], 'Title': r[0]}
+                result['Items'].append(item)
+        else:
+            result = self._http_request('/list/{}'.format(slug), {'limit': 48, 'expanded': True})
         return self._handle_paging(result)
+
 
     def getEpisode(self, slug):
         return self._http_request('/programcard/{}'.format(slug))
+
+    def searchSeries(self, query):
+        # Remove various characters that make the API puke
+        cleaned_query = re.sub('[&()"\'\.!]', '', query)
+        result = self._http_request('/search/tv/programcards-latest-episode-with-asset/series-title/{}'.format(cleaned_query))
+        return self._handle_paging(result)
 
     def getMostViewed(self):
         result = self._http_request('/list/view/mostviewed', {'limit': 48})
@@ -149,7 +133,6 @@ class Api(object):
 
     def getVideoUrl(self, assetUri):
         result = self._http_request(assetUri)
-
         uri = None
         for link in result['Links']:
             if link['Target'] == 'HLS':
@@ -190,8 +173,8 @@ class Api(object):
     def redirectImageUrl(self, imageUrl, width=300, height=170):
 	# HACK: the servers behind /mu-online/api/1.2 is often returning Content-Type="text/xml" instead of "image/jpeg",
         # this problem is not pressent for /mu/bar (the "Classic API")
-        assert(self.api.API_URL.endswith("/mu-online/api/1.2"))
-        return imageUrl.replace("/mu-online/api/1.2/bar/","/mu/bar/") + "?width={:d}&height={:d}".format(width, height)
+        assert(self.api.API_URL.endswith("/mu-online/api/1.4"))
+        return imageUrl.replace("/mu-online/api/1.4/bar/","/mu/bar/") + "?width={:d}&height={:d}".format(width, height)
 
 
     def _handle_paging(self, result):

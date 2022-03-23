@@ -114,8 +114,13 @@ class DrDkTvAddon(object):
                 xbmcgui.Dialog().ok(addon_name, tr(30013))
         else:
             directoryItems = list()
-            if add_area_selector:
-                directoryItems.append((self._plugin_url + '?show=areaselector', self.area_item, True))
+
+
+
+
+
+
+
             for item in items:
                 menuItems = list(self.menuItems)
 
@@ -127,10 +132,18 @@ class DrDkTvAddon(object):
                     runScript = compat_str("RunPlugin(plugin://plugin.video.drnu/?addfavorite={})").format(title)
                     menuItems.append((tr(30200), runScript))
 
-
                 listItem = xbmcgui.ListItem(item['SeriesTitle'], offscreen=True)
                 fanart_h = int(get_setting('fanart.size'))
                 fanart_w = int(fanart_h*16/9)
+
+
+
+#                f = open("/tmp/demofile2.txt", "a")
+#                f.write(str(item) + '\n')
+#                f.close()
+
+
+
                 listItem.setArt({'thumb': self.api.redirectImageUrl(item['PrimaryImageUri'], 640, 360),
                           	 'icon': self.api.redirectImageUrl(item['PrimaryImageUri'], 75, 42),
                           	 'fanart': self.api.redirectImageUrl(item['PrimaryImageUri'], fanart_w, fanart_h)})

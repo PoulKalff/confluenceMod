@@ -105,9 +105,14 @@ def getEpisode(slug):
 
 # --- Main  ---------------------------------------------------------------------------------------
 
-result = _http_request('/page/tv/programs')
 
-print(result)
+
+slug = 'den-lille-prinsesse-series'
+result = _http_request('/list/{}'.format(slug), {'limit': 48, 'expanded': True})
+
+
+
+print(result['Items'][0])
 
 
 sys.exit('killed for DEV')
