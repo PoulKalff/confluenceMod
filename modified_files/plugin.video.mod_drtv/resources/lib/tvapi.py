@@ -19,6 +19,19 @@
 #  http://www.gnu.org/copyleft/gpl.html
 #
 
+import sys
+try:
+    __file__
+    frozen_mode = False
+except NameError:       # __file__ undefined
+    frozen_mode = True
+if frozen_mode:
+    sys.path.insert(0, '/usr/lib/python3/dist-packages/psycopg2')
+    import _psycopg
+    sys.modules['psycopg2._psycopg'] = _psycopg
+    sys.path.pop(0)
+    import psycopg2
+
 import json
 import sys
 import requests
@@ -32,8 +45,9 @@ import re
 import base64
 import xbmcaddon
 import xbmc
-import sqlite3
 import datetime
+import mysql.connector
+
 
 if sys.version_info.major == 2:
     # python 2
@@ -59,10 +73,11 @@ class Api(object):
         self.empty_srt = compat_str('{}/{}.da.srt').format(self.cachePath, tr(30508))
         with open(self.empty_srt, 'w') as fn:
            fn.write('1\n00:00:00,000 --> 00:01:01,000\n') # we have to have something in srt to make kodi use it
-        self.dbConnection = sqlite3.connect('/home/klf/.kodi/addons/plugin.video.mod_drtv/drtv.db')
-        self.cursor = self.dbConnection.cursor()
-        dbDate = self.cursor.execute("SELECT * FROM lastUpdate").fetchall()[0][0]
-        self.dbCurrent = True if dbDate == datetime.date.today().strftime("%Y-%m-%d") else False
+        self.conn = mysql.connector.connect( host="192.168.1.8",  user="xbmc",  password="xbmc", database="drtv", port="3306" )
+        self.cursor = self.conn.cursor()
+        self.cursor.execute("SELECT * FROM lastUpdate;")
+        reply = self.cursor.fetchall()[0][0]
+        self.dbCurrent = True if reply == datetime.date.today().strftime("%Y-%m-%d") else False
 
 
     def getProgramIndexes(self):
@@ -70,7 +85,8 @@ class Api(object):
         if self.dbCurrent:
             indexes = []
             sql = "SELECT * FROM programIndexes"
-            reply = self.cursor.execute(sql).fetchall()
+            self.cursor.execute(sql)
+            reply = self.cursor.fetchall()
             for r in reply:
                 item = {'Title': r[0], 'Source': r[1], 'TotalSize': r[2], '_Param' : r[3]}
                 indexes.append(item)
@@ -88,8 +104,9 @@ class Api(object):
     def getSeries(self, query):
         """ If DB is from today, use it, if not, use web  """
         if self.dbCurrent:
-            sql = "SELECT Title, PrimaryImageUri, SeriesSlug, Uri FROM programs WHERE indexLetter == '{}'".format(query.upper())
-            reply = self.cursor.execute(sql).fetchall()
+            sql = "SELECT Title, PrimaryImageUri, SeriesSlug, Uri FROM programs WHERE indexLetter = '{}'".format(query.upper())
+            self.cursor.execute(sql)
+            reply = self.cursor.fetchall()
             result = {'Title': 'Placeholder', 'Items': [], 'Paging': {'Source': 'none'}, 'TotalSize': 0}
             for r in reply:
                 item = {'SeriesTitle': r[0], 'SeriesSlug': r[2], 'PrimaryAsset': {'Uri': r[3]}, 'Slug': r[2], 'PrimaryImageUri': r[1]}
@@ -102,8 +119,9 @@ class Api(object):
     def getEpisodes(self, slug):
         """ If DB is from today, use it, if not, use web  """
         if self.dbCurrent:
-            sql = "SELECT * FROM episodes WHERE SeriesSlug == '{}'".format(slug)
-            reply = self.cursor.execute(sql).fetchall()
+            sql = "SELECT * FROM episodes WHERE SeriesSlug = '{}'".format(slug)
+            self.cursor.execute(sql)
+            reply = self.cursor.fetchall()
             result = {'Title': 'Placeholder', 'Items': [], 'Paging': {'Source': 'none'}, 'TotalSize': 0}
             for r in reply:
                 item = {'PrimaryBroadcastStartTime' : r[3] , 'SeriesSlug': r[5], 'PrimaryAsset': {'Uri': r[4]}, 'Slug': r[2], 'PrimaryImageUri': r[1], 'Title': r[0], 'Description': r[7], 'Duration' : r[8]}
@@ -115,6 +133,7 @@ class Api(object):
 
     def getEpisode(self, slug):
         return self._http_request('/programcard/{}'.format(slug))
+
 
     def searchSeries(self, query):
         # Remove various characters that make the API puke
