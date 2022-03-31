@@ -132,7 +132,7 @@ class HandleDB:
 
 # --- Main ----------------------------------------------------------------------------------------
 
-test = HandleDB()
+#test = HandleDB()
 #print('No errors found, but do not run me, import me!')
 
 
