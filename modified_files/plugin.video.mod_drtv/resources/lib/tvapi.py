@@ -20,18 +20,6 @@
 #
 
 import sys
-try:
-    __file__
-    frozen_mode = False
-except NameError:       # __file__ undefined
-    frozen_mode = True
-if frozen_mode:
-    sys.path.insert(0, '/usr/lib/python3/dist-packages/psycopg2')
-    import _psycopg
-    sys.modules['psycopg2._psycopg'] = _psycopg
-    sys.path.pop(0)
-    import psycopg2
-
 import json
 import sys
 import requests
@@ -46,8 +34,8 @@ import base64
 import xbmcaddon
 import xbmc
 import datetime
-import mysql.connector
-
+#import mysql.connector
+import MySQLdb
 
 if sys.version_info.major == 2:
     # python 2
@@ -58,9 +46,6 @@ else:
     import urllib.parse as urlparse
 ADDON = xbmcaddon.Addon()
 tr = xbmcaddon.Addon().getLocalizedString
-
-SLUG_PREMIERES='forpremierer'
-SLUG_ADULT=['dr1','dr2','dr3','dr-k']
 
 class Api(object):
     API_URL = 'http://www.dr.dk/mu-online/api/1.4'
@@ -73,7 +58,8 @@ class Api(object):
         self.empty_srt = compat_str('{}/{}.da.srt').format(self.cachePath, tr(30508))
         with open(self.empty_srt, 'w') as fn:
            fn.write('1\n00:00:00,000 --> 00:01:01,000\n') # we have to have something in srt to make kodi use it
-        self.conn = mysql.connector.connect( host="192.168.1.8",  user="xbmc",  password="xbmc", database="drtv", port="3306" )
+#        self.conn = mysql.connector.connect( host="192.168.1.8",  user="xbmc",  password="xbmc", database="drtv", port=3306 )
+        self.conn = MySQLdb.connect( host="192.168.1.8",  user="xbmc",  password="xbmc", database="drtv", port=3306 )
         self.cursor = self.conn.cursor()
         self.cursor.execute("SELECT * FROM lastUpdate;")
         reply = self.cursor.fetchall()[0][0]
