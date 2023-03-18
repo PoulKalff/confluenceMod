@@ -20,6 +20,5 @@ else
         sudo cp /home/$1/confluenceMod/modified_files/DialogSeekBar.xml                /home/$1/.kodi/addons/skin.confluence/720p/
         sudo cp -r /home/$1/confluenceMod/modified_files/plugin.video.mod_drtv         /home/$1/.kodi/addons/
         echo '     Done!'
-        echo '  Manually move, if necessary: drtv-plugin-updatedb  --->  <server>/usr/local/share'
         echo
 fi
