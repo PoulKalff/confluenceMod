@@ -13,7 +13,7 @@
   <videodatabase>
     <type>mysql</type>
     <host>192.168.1.8</host>
-    <port>9142</port>
+    <port>3306</port>
     <user>kodi</user>
     <pass>kodi</pass>
   </videodatabase>
