@@ -1,5 +1,4 @@
 # rootfs is not mounted in fstab as we do it via initramfs. Uncomment for remount (slower boot)
-#/dev/vero-nand/root		/    ext4      defaults,noatime    0   0
 
 # remote NAS disk
 192.168.1.12:/nfs/8tb_hdd	/mnt/8tb_hdd	nfs	defaults	0	0
