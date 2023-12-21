@@ -103,13 +103,12 @@
 		<control type="button" id="90154">
 			<include>ButtonHomeSubCommonValues</include>
 			<label>Photos</label>
-                        <onclick>ActivateWindow(Pictures, /mnt/8tb_hdd/8tb_hdd/multiMedia/photos/, return)</onclick>
+                        <onclick>ActivateWindow(Pictures,special://profile/playlists/pictures/pictures.xsp, return)</onclick>
 		</control>
                 <control type="button" id="90155">
                         <include>ButtonHomeSubCommonValues</include>
 			<label>Home Video</label>
                         <onclick>ActivateWindow(Videos,special://profile/playlists/video/hvideo.xsp, return)</onclick>
-
                 </control>
 		<control type="button" id="90156">
 			<include>ButtonHomeSubCommonValues</include>

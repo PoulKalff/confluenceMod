@@ -1,7 +1,4 @@
 <sources>
-    <programs>
-        <default pathversion="1"></default>
-    </programs>
     <video>
         <default pathversion="1"></default>
         <source>
@@ -34,20 +31,13 @@
             <path pathversion="1">/mnt/8tb_hdd/multiMedia/documentary/</path>
             <allowsharing>true</allowsharing>
         </source>
+    </video>
+    <pictures>
         <source>
             <name>photos</name>
             <path pathversion="1">/mnt/8tb_hdd/multiMedia/photos</path>
             <allowsharing>true</allowsharing>
         </source>
-    </video>
-    <music>
-        <default pathversion="1"></default>
-    </music>
-    <pictures>
-        <default pathversion="1"></default>
     </pictures>
-    <files>
-        <default pathversion="1"></default>
-    </files>
 </sources>
 
