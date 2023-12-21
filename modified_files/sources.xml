@@ -34,6 +34,11 @@
             <path pathversion="1">/mnt/8tb_hdd/multiMedia/documentary/</path>
             <allowsharing>true</allowsharing>
         </source>
+        <source>
+            <name>photos</name>
+            <path pathversion="1">/mnt/8tb_hdd/multiMedia/photos</path>
+            <allowsharing>true</allowsharing>
+        </source>
     </video>
     <music>
         <default pathversion="1"></default>
