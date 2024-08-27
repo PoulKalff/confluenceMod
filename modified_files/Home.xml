@@ -754,93 +754,43 @@
 				<effect type="zoom" start="100" end="60" center="960,540" easing="in" tween="back" time="225" />
 				<effect type="fade" start="100" end="0" time="225" />
 			</animation>
+		        <!-- SubMenu Start ---------------------------------------------------------------------------->
 			<control type="group" id="9001">
 				<depth>DepthMenu-</depth>
 				<left>0</left>
 				<top>105</top>
 				<onup>9000</onup>
 				<ondown>9002</ondown>
-				<control type="grouplist" id="9010">
-					<include>HomeSubMenuCommonValues</include>
-					<onleft>9010</onleft>
-					<onright>9010</onright>
-					<visible>Container(9000).HasFocus(2)</visible>
-					<!-- Buttons for the grouplist -->
-					<include>HomeSubMenuVideos</include>
-				</control>
-				<control type="grouplist" id="9016">
-					<include>HomeSubMenuCommonValues</include>
-					<onleft>9016</onleft>
-					<onright>9016</onright>
-					<visible>Container(9000).HasFocus(10) + !String.IsEmpty(Container(90160).ListItemNoWrap(0).Label) + [System.IsMaster | !Skin.HasSetting(HomeMenuMovieUsePlaylist)]</visible>
-					<!-- Buttons for the grouplist -->
-					<include>HomeSubMenuMovies</include>
-				</control>
-				<control type="grouplist" id="9017">
-					<include>HomeSubMenuCommonValues</include>
-					<onleft>9017</onleft>
-					<onright>9017</onright>
-					<visible>Container(9000).HasFocus(11) + !String.IsEmpty(Container(90170).ListItemNoWrap(0).Label) + [System.IsMaster | !Skin.HasSetting(HomeMenuTVShowUsePlaylist)]</visible>
-					<!-- Buttons for the grouplist -->
-					<include>HomeSubMenuTVShows</include>
-				</control>
-				<control type="grouplist" id="9011">
-					<include>HomeSubMenuCommonValues</include>
-					<onleft>9011</onleft>
-					<onright>9011</onright>
-					<visible>Container(9000).HasFocus(3) + !String.IsEmpty(Container(90110).ListItemNoWrap(0).Label) + [System.IsMaster | !Skin.HasSetting(HomeMenuMusicUsePlaylist)]</visible>
-					<!-- Buttons for the grouplist -->
-					<include>HomeSubMenuMusic</include>
-				</control>
-				<control type="grouplist" id="9012">
-					<include>HomeSubMenuCommonValues</include>
-					<onleft>9012</onleft>
-					<onright>9012</onright>
-					<visible>Container(9000).HasFocus(5)</visible>
-					<!-- Buttons for the grouplist -->
-					<include>HomeSubMenuSystem</include>
-				</control>
-				<control type="grouplist" id="9013">
-					<include>HomeSubMenuCommonValues</include>
-					<onleft>9013</onleft>
-					<onright>9013</onright>
-					<visible>Container(9000).HasFocus(6)</visible>
-					<!-- Buttons for the grouplist -->
-					<include>HomeSubMenuPlayDisc</include>
-				</control>
-				<control type="grouplist" id="9014">
-					<include>HomeSubMenuCommonValues</include>
-					<onleft>9014</onleft>
-					<onright>9014</onright>
-					<visible>Container(9000).HasFocus(12)</visible>
-					<!-- Buttons for the grouplist -->
-					<include>HomeSubMenuTV</include>
-				</control>
-				<control type="grouplist" id="9015">
-					<include>HomeSubMenuCommonValues</include>
-					<onleft>9013</onleft>
-					<onright>9013</onright>
-					<visible>Container(9000).HasFocus(4)</visible>
-					<!-- Buttons for the grouplist -->
-					<include>HomeSubMenuPictures</include>
-				</control>
-				<control type="grouplist" id="9016">
-					<include>HomeSubMenuCommonValues</include>
-					<onleft>9014</onleft>
-					<onright>9014</onright>
-					<visible>Container(9000).HasFocus(13)</visible>
-					<!-- Buttons for the grouplist -->
-					<include>HomeSubMenuRadio</include>
-				</control>
-				<control type="grouplist" id="9017">
-					<include>HomeSubMenuCommonValues</include>
-					<onleft>9017</onleft>
-					<onright>9017</onright>
-					<visible>Container(9000).HasFocus(1)</visible>
-					<!--Buttons for the grouplist -->
-					<include>HomeSubMenuAddons</include>
-				</control>
+                                <control type="grouplist" id="9010">
+                                        <include>HomeSubMenuCommonValues</include>
+                                        <onleft>9013</onleft>
+                                        <onright>9011</onright>
+                                        <visible>Container(9000).HasFocus(10)</visible>
+                                        <include>HomeSubMenuMovies</include>
+                                </control>
+                                <control type="grouplist" id="9011">
+                                        <include>HomeSubMenuCommonValues</include>
+                                        <onleft>9010</onleft>
+                                        <onright>9012</onright>
+                                        <visible>Container(9000).HasFocus(11)</visible>
+                                        <include>HomeSubMenuTV</include>
+                                </control>
+                                <control type="grouplist" id="9012">
+                                        <include>HomeSubMenuCommonValues</include>
+                                        <onleft>9011</onleft>
+                                        <onright>9013</onright>
+                                        <visible>Container(9000).HasFocus(12)</visible>
+                                        <include>HomeSubMenuTVShows</include>
+                                </control>
+                                <control type="grouplist" id="9013">
+                                        <include>HomeSubMenuCommonValues</include>
+                                        <onleft>9012</onleft>
+                                        <onright>9010</onright>
+                                        <visible>Container(9000).HasFocus(13)</visible>
+                                        <include>HomeSubMenuMisc</include>
+                                </control>
 			</control>
+		        <!-- SubMenu Stop ----------------------------------------------------------------------------->
 			<control type="image">
 				<left>-150</left>
 				<top>0</top>
@@ -939,6 +889,12 @@
 				</focusedlayout>
 	                <!-- Main Ribbon Content start (Central) ---------------------------------------------------------------------------------------->
 				<content>
+       <!-- 				<item id="9">
+						<label>Games</label>
+						<onclick>ActivateWindow(Games)</onclick>
+                                                <icon>-</icon>
+                                                <thumb>-</thumb>
+					</item> -->
                                         <item id="10">
                                                 <label>Film</label>
                                                 <onclick>ActivateWindow(Videos,special://profile/playlists/video/fcollection.xsp, return)</onclick>
@@ -963,13 +919,6 @@
                                                 <onclick>RunAddon(plugin.video.drnu, return)</onclick>
                                                 <thumb>-</thumb>
                                         </item>
-       <!-- 				<item id="14">
-						<label>31001</label>
-						<onclick>ActivateWindow(Games)</onclick>
-						<icon />
-						<thumb />
-						<visible>[!Skin.HasSetting(HomeMenuNoGamesButton) + !System.IsMaster] | [!Skin.HasSetting(MasterHomeMenuNoGamesButton) + System.IsMaster]</visible>
-					</item> -->
 				</content>
         	        <!-- Main Ribbon Content end (Central) ------------------------------------------------------------------------------------------>
 			</control>
