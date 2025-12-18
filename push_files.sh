@@ -36,7 +36,13 @@ else
         sudo cp /home/$1/confluenceMod/modified_files/*.png                               /home/$1/.kodi/addons/skin.confluence/media/
         sudo cp -r /home/$1/confluenceMod/modified_files/plugin.video.drnu                /home/$1/.kodi/addons/
         sudo cp -r /home/$1/confluenceMod/modified_files/service.subtitles.opensubtitles  /home/$1/.kodi/addons/
-        echo '     All files copied'
+        echo '  Setting up mount....'
+        sudo mkdir /mnt/8tb_hdd
+        sudo chmod 777 /mnt/8tb_hdd
+	sudo chmod 777 /etc/fstab
+        sudo echo "" >> /etc/fstab
+        sudo echo "192.168.1.12:/nfs/8tb_hdd       /mnt/8tb_hdd    nfs     defaults        0       0" >> /etc/fstab
+	sudo chmod 644 /etc/fstab
         echo
 fi
 
